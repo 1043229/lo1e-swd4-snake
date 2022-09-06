@@ -2,5 +2,5 @@ document.getElementById('snake');
 const canvas = document.getElementById("snake");
 const ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "green";
-ctx.fillRect(10, 10, 150, 100);
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, 400, 400);
