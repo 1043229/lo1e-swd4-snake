@@ -6,15 +6,22 @@ let snakeX = 200;
 let snakeY = 200;
 
 // draw the background
+function drawBackground(){
 ctx.fillStyle = "black";
-ctx.fillRect(snakeX, SnakeY, 400, 400);
+ctx.fillRect(0, 0, 400, 400);
+}
 
 // draw the snake
+function drawSnake(){
 ctx.fillStyle = "green";
-ctx.fillRect(200, 200, 20, 20);
+ctx.fillRect(snakeX, snakeY, 20, 20);
+}
 
 function update() {
-    console.log('update');
+    snakeX += 20;
+    console.log(snakeX);
+    drawBackground();
+    drawSnake();
 }
 
 setInterval(update, 1000);
