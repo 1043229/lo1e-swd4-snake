@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 
 let snakeX = 200;
 let snakeY = 200;
+let direction = 'down';
 
 // draw the background
 function drawBackground(){
@@ -18,10 +19,21 @@ ctx.fillRect(snakeX, snakeY, 20, 20);
 }
 
 function update() {
-    snakeX += 20;
-    console.log(snakeX);
+    if(direction == 'right'){
+        snakeX += 20;
+    } else if(direction == 'left'){
+        snakeX -= 20;
+    } else if(direction == 'up'){
+        snakeY -= 20;
+    } else if(direction == 'down'){
+        snakeY += 20;
+    }
+   
+   
+   
     drawBackground();
     drawSnake();
 }
-
+drawBackground();
+drawSnake();
 setInterval(update, 1000);
