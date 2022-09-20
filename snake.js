@@ -20,24 +20,35 @@ ctx.fillRect(snakeX, snakeY, 20, 20);
 
 function update() {
     if(direction == 'right') {
-        if(snakeX > 400) {
+        if(snakeX < 380) {
         snakeX += 20;
     } else {
         alert("gameover");
     }
 
 
-
-} else if (direction == 'left') {
+    } else if (direction == 'left') {
         if(snakeX > 0) {
             snakeX -=20;
         } else {
             alert("gameover");
         }
+
+
     } else if (direction == 'up') {
+        if(snakeY > 0) {
         snakeY -= 20;
+    } else {
+        alert("gameover");
+    }
+
+
     } else if (direction == 'down') {
+        if(snakeY < 380) {
         snakeY +=20;
+    } else {
+        alert("gameover");
+    }
     }
 
     drawBackground();
