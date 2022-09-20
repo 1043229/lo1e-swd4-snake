@@ -20,9 +20,20 @@ ctx.fillRect(snakeX, snakeY, 20, 20);
 
 function update() {
     if(direction == 'right') {
-    snakeX += 20;
-    } else if (direction == 'left') {
-        snakeX -=20;
+        if(snakeX > 400) {
+        snakeX += 20;
+    } else {
+        alert("gameover");
+    }
+
+
+
+} else if (direction == 'left') {
+        if(snakeX > 0) {
+            snakeX -=20;
+        } else {
+            alert("gameover");
+        }
     } else if (direction == 'up') {
         snakeY -= 20;
     } else if (direction == 'down') {
@@ -45,5 +56,5 @@ function changeDirection(event) {
     }
 }
 
-setInterval(update, 1000);
+setInterval(update, 500);
 addEventListener('keydown', changeDirection);
