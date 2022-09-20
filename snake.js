@@ -23,7 +23,7 @@ function update() {
         if(snakeX < 380) {
         snakeX += 20;
     } else {
-        alert("gameover");
+        gameOver();
     }
 
 
@@ -31,7 +31,7 @@ function update() {
         if(snakeX > 0) {
             snakeX -=20;
         } else {
-            alert("gameover");
+            gameOver();
         }
 
 
@@ -39,7 +39,7 @@ function update() {
         if(snakeY > 0) {
         snakeY -= 20;
     } else {
-        alert("gameover");
+        gameOver();
     }
 
 
@@ -47,7 +47,7 @@ function update() {
         if(snakeY < 380) {
         snakeY +=20;
     } else {
-        alert("gameover");
+        gameOver();
     }
     }
 
@@ -65,6 +65,11 @@ function changeDirection(event) {
     } else if (event.code == 'ArrowRight') {
         direction = 'right';
     }
+}
+
+function gameOver() {
+    direction = null;
+    alert("gameover");
 }
 
 setInterval(update, 500);
