@@ -54,6 +54,11 @@ function update() {
     }
     }
 
+  if (foodX == snakeX && foodY == snakeY) {
+    alert('hap';)
+    spawnFood();
+  }  
+
     drawBackground();
     drawSnake();
     drawFood();
@@ -85,6 +90,8 @@ function drawFood() {
     ctx.fillStyle = "red";
 ctx.fillRect(foodX, foodY, 20, 20);
 }
+
+
 
 
 setInterval(update, 500);
